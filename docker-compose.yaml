@@ -6,7 +6,7 @@ services:
       dockerfile: ./Dockerfile
       context: .
     environment:
-      SQLALCHEMY_DATABASE_URI: sqlite:////tmp/core.db
+      SQLALCHEMY_DATABASE_URI: postgresql://user:password@pg:5432/core
       CONFIG_NAME: Config
     volumes:
     - ./core:/app/core
