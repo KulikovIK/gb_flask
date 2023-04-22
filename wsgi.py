@@ -1,7 +1,5 @@
-from core.main_app import make_app, db
+from core.main_app import app, db
 
-
-app = make_app()
 
 @app.cli.command("init-db", help="create main db")
 def init_db():
@@ -19,3 +17,9 @@ def create_users():
     db.session.commit()
 
     print("users is done! created users:", admin, james)
+
+if __name__ == "__main__":
+    app.run(
+        host="0.0.0.0",
+        debug=True,
+    )

@@ -12,7 +12,6 @@ users_app = Blueprint(
 @users_app.route("/")
 def users_list():
     users = User.query.all()
-    print(users[1].id)
     return render_template('users/list.html', users=users)
 
 @users_app.route("/<int:user_id>/")
