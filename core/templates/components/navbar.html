@@ -7,7 +7,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                {% for (endpoint, label) in [('users_app.users_list', 'Users'), ('articles_app.articles_list', 'Articles'), ('auth_app.register', 'Register')] %}
+                {% for (endpoint, label) in [
+                    ('users_app.users_list', 'Users'), 
+                    ('articles_app.articles_list', 'Articles'),
+                    ('authors_app.authors_list', 'Authors'), 
+                    ('auth_app.register', 'Register') ] %}
                 <a href="{{ url_for(endpoint) }}"
                         class="nav-link {% if request.endpoint == endpoint -%}active{%- endif %}">
                         {{ label }}

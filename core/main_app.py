@@ -1,12 +1,13 @@
 from flask import Flask
 from flask_migrate import Migrate
 
-from .index.views import index
-from .user.views import users_app
-from .articles.views import articles_app
+from core.index.views import index
+from core.user.views import users_app
+from core.articles.views import articles_app
 from core.models.database import db
 from core.auth.view import login_manager, auth_app
 from core.security import flask_bcrypt
+from core.author.views import authors_app
 
 
 
@@ -15,6 +16,7 @@ VIEWS = [
     users_app,
     articles_app,
     auth_app,
+    authors_app,
 ]
 
 def register_blueprints(app: Flask):
