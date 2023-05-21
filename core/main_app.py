@@ -8,6 +8,7 @@ from core.models.database import db
 from core.auth.view import login_manager, auth_app
 from core.security import flask_bcrypt
 from core.author.views import authors_app
+from core.admin import admin
 import os
 
 
@@ -29,6 +30,7 @@ app = Flask(__name__)
 app.config.from_object(f"core.config.Config")
 
 db.init_app(app)
+admin.init_app(app)
 
 migrate = Migrate(app, db, compare_type=True, render_as_batch=True)
 

@@ -13,3 +13,4 @@ class Config:
         "SQLALCHEMY_TRACK_MODIFICATIONS")
     SECRET_KEY = os.getenv("SECRET_KEY")
     WTF_CSRF_ENABLED = True
+    FLASK_ADMIN_SWATCH = 'cosmo'
