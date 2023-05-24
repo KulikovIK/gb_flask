@@ -9,6 +9,7 @@ from core.auth.view import login_manager, auth_app
 from core.security import flask_bcrypt
 from core.author.views import authors_app
 from core.admin import admin
+from core.api import init_api
 import os
 
 
@@ -39,6 +40,7 @@ app.config["SECRET_KEY"] = "abcdefg123456"
 
 login_manager.init_app(app)
 flask_bcrypt.init_app(app)
+api = init_api(app)
 
 
 @app.cli.command("create-tags")
