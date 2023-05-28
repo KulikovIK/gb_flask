@@ -29,6 +29,7 @@ def register_blueprints(app: Flask):
 
 app = Flask(__name__)
 app.config.from_object(f"core.config.Config")
+print(app.config)
 
 db.init_app(app)
 admin.init_app(app)
