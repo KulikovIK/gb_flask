@@ -64,7 +64,7 @@ def secret_view():
 @auth_app.route("/register/", methods=["GET", "POST"], endpoint="register")
 def register():
     if current_user.is_authenticated:
-        return redirect("index.main_page")
+        return redirect(url_for("index.main_page"))
     error = None
     form = RegistrationForm(request.form)
 
